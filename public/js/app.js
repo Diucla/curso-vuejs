@@ -42957,7 +42957,7 @@ exports = module.exports = __webpack_require__(45)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.blue{\n    background-color: blue;\n}\n.green{\n    background-color: green;\n}\n\n", ""]);
 
 // exports
 
@@ -43324,47 +43324,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -43373,11 +43332,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 		return {
 
-			nome: '',
-			telefone: '',
-			conheceu: '',
-			interesses: [],
-			novidades: ''
+			imagem: "https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg",
+
+			alt: 'VueJs image',
+
+			cor: 'blue'
 
 		};
 	},
@@ -43398,284 +43357,13 @@ var render = function() {
   return _c("div", [
     _c("h2", [_vm._v("Testes")]),
     _vm._v(" "),
-    _c("form", { attrs: { action: "" } }, [
-      _c("label", { attrs: { for: "nome" } }, [_vm._v("Nome")]),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.nome,
-            expression: "nome"
-          }
-        ],
-        staticClass: "form-control",
-        attrs: { id: "nome", type: "text" },
-        domProps: { value: _vm.nome },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.nome = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "tel" } }, [_vm._v("Telefone")]),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.telefone,
-            expression: "telefone"
-          }
-        ],
-        staticClass: "form-control",
-        attrs: { id: "tel", type: "text" },
-        domProps: { value: _vm.telefone },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.telefone = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("label", [_vm._v("Deseja receber nossas novidades?")]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.novidades,
-            expression: "novidades"
-          }
-        ],
-        attrs: { type: "radio", value: "Sim" },
-        domProps: { checked: _vm._q(_vm.novidades, "Sim") },
-        on: {
-          change: function($event) {
-            _vm.novidades = "Sim"
-          }
-        }
-      }),
-      _vm._v("Sim\n            "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.novidades,
-            expression: "novidades"
-          }
-        ],
-        attrs: { type: "radio", value: "Não" },
-        domProps: { checked: _vm._q(_vm.novidades, "Não") },
-        on: {
-          change: function($event) {
-            _vm.novidades = "Não"
-          }
-        }
-      }),
-      _vm._v("Não\n\n\n            "),
-      _c("br"),
-      _c("br"),
-      _vm._v(" "),
-      _c("label", [_vm._v("Interesses")]),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.interesses,
-            expression: "interesses"
-          }
-        ],
-        attrs: { type: "checkbox", value: "Futebol" },
-        domProps: {
-          checked: Array.isArray(_vm.interesses)
-            ? _vm._i(_vm.interesses, "Futebol") > -1
-            : _vm.interesses
-        },
-        on: {
-          change: function($event) {
-            var $$a = _vm.interesses,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = "Futebol",
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.interesses = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.interesses = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
-              }
-            } else {
-              _vm.interesses = $$c
-            }
-          }
-        }
-      }),
-      _vm._v("Futebol "),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.interesses,
-            expression: "interesses"
-          }
-        ],
-        attrs: { type: "checkbox", value: "Formula 1" },
-        domProps: {
-          checked: Array.isArray(_vm.interesses)
-            ? _vm._i(_vm.interesses, "Formula 1") > -1
-            : _vm.interesses
-        },
-        on: {
-          change: function($event) {
-            var $$a = _vm.interesses,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = "Formula 1",
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.interesses = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.interesses = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
-              }
-            } else {
-              _vm.interesses = $$c
-            }
-          }
-        }
-      }),
-      _vm._v("Formula 1 "),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.interesses,
-            expression: "interesses"
-          }
-        ],
-        attrs: { type: "checkbox", value: "Corrida" },
-        domProps: {
-          checked: Array.isArray(_vm.interesses)
-            ? _vm._i(_vm.interesses, "Corrida") > -1
-            : _vm.interesses
-        },
-        on: {
-          change: function($event) {
-            var $$a = _vm.interesses,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false
-            if (Array.isArray($$a)) {
-              var $$v = "Corrida",
-                $$i = _vm._i($$a, $$v)
-              if ($$el.checked) {
-                $$i < 0 && (_vm.interesses = $$a.concat([$$v]))
-              } else {
-                $$i > -1 &&
-                  (_vm.interesses = $$a
-                    .slice(0, $$i)
-                    .concat($$a.slice($$i + 1)))
-              }
-            } else {
-              _vm.interesses = $$c
-            }
-          }
-        }
-      }),
-      _vm._v("Corrida "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _c("br"),
-      _vm._v(" "),
-      _c("label", [_vm._v("Como nos conheceu")]),
-      _vm._v(" "),
-      _c(
-        "select",
-        {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.conheceu,
-              expression: "conheceu"
-            }
-          ],
-          attrs: { name: "", id: "" },
-          on: {
-            change: function($event) {
-              var $$selectedVal = Array.prototype.filter
-                .call($event.target.options, function(o) {
-                  return o.selected
-                })
-                .map(function(o) {
-                  var val = "_value" in o ? o._value : o.value
-                  return val
-                })
-              _vm.conheceu = $event.target.multiple
-                ? $$selectedVal
-                : $$selectedVal[0]
-            }
-          }
-        },
-        [
-          _c("option", { attrs: { value: "google" } }, [_vm._v("Google")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "tv" } }, [_vm._v("TV")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "revista" } }, [_vm._v("Revista")])
-        ]
-      ),
-      _vm._v(" "),
-      _c("br"),
-      _c("br"),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-primary" }, [_vm._v("Enviar")])
-    ]),
+    _c("img", { attrs: { src: _vm.imagem, alt: _vm.alt } }),
     _vm._v(" "),
-    _c("hr"),
-    _vm._v("\n\n        Nome: " + _vm._s(_vm.nome) + " "),
-    _c("br"),
-    _vm._v("\n        Telefone: " + _vm._s(_vm.telefone) + " "),
-    _c("br"),
-    _vm._v("\n        Interesses: " + _vm._s(_vm.interesses) + " "),
-    _c("br"),
-    _vm._v("\n        Novidades: " + _vm._s(_vm.novidades) + " "),
-    _c("br"),
-    _vm._v("\n        Conheceu: " + _vm._s(_vm.conheceu) + " "),
-    _c("br"),
-    _vm._v(" "),
-    _c("hr")
+    _c("p", { class: _vm.cor }, [
+      _vm._v(
+        "\n            Já a propriedade methods conterá um objeto com todos os métodos também disponíveis ao HTML mas não limitados a ele. Digo isso pois qualquer método contido neste objeto pode também executar os demais métodos do componente, bastando para isso utilizar o this\n\n        "
+      )
+    ])
   ])
 }
 var staticRenderFns = []
