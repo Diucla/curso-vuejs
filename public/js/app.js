@@ -42957,7 +42957,7 @@ exports = module.exports = __webpack_require__(45)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43317,29 +43317,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  ready: function ready() {},
-  data: function data() {
+	data: function data() {
 
-    return {
-      btnClassEnviar: {
-        'btn-primary': true,
-        'btn-sm': true
-      },
-      btnClassLimpar: ['btn-danger', { 'btn-lg': true }],
-      btnStyleEnviar: {
-        'font-size': '29px'
-      },
-      btnStyleLimpar: {
-        'font-size': '20px'
-      }
-    };
-  },
+		return {};
+	},
 
 
-  methods: {}
+	methods: {
+		enviar: function enviar(nome) {
+			alert('Enviado para ' + nome);
+		}
+	}
 
 });
 
@@ -43354,25 +43348,23 @@ var render = function() {
   return _c("div", [
     _c("h2", [_vm._v("Testes")]),
     _vm._v(" "),
-    _c(
-      "button",
-      {
-        staticClass: "btn",
-        class: _vm.btnClassEnviar,
-        style: _vm.btnStyleEnviar
-      },
-      [_vm._v("Enviar")]
-    ),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        staticClass: "btn",
-        class: _vm.btnClassLimpar,
-        style: _vm.btnStyleLimpar
-      },
-      [_vm._v("Limpar")]
-    )
+    _c("form", { attrs: { action: "https://google.com" } }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary",
+          attrs: { type: "submit" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              $event.stopPropagation()
+              _vm.enviar("Sumbus")
+            }
+          }
+        },
+        [_vm._v("Enviar")]
+      )
+    ])
   ])
 }
 var staticRenderFns = []
