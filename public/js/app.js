@@ -43325,39 +43325,41 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
+    data: function data() {
 
-    return {
-
-      users: [{ nome: 'John Doe',
-        area: 'grafic-design' }, { nome: 'Claud Sumbus',
-        area: 'front-end' }, { nome: 'Jose Seie',
-        area: 'back-end' }]
-
-    };
-  },
-
-
-  filters: {
-    toUpperCase: function toUpperCase(str) {
-      return str.toUpperCase();
+        return {
+            nome: 'John Doe',
+            cor: 'btn-primary'
+        };
     },
-    truncate: function truncate(str, length) {
-      var output = str;
 
-      if (output.length > length) {
-        output = output.substr(0, length) + ' ...';
-      }
 
-      return output;
+    computed: {
+        toUpperCase: function toUpperCase() {
+            return this.nome.toUpperCase();
+        },
+        corFinal: function corFinal() {
+            return this.cor;
+        }
+    },
+
+    watch: {
+        nome: function nome(newValue, oldValue) {
+            console.log('New Value', newValue);
+            console.log('Old Value', oldValue);
+        }
+    },
+
+    methods: {
+        trocaCor: function trocaCor() {
+
+            if (this.cor == 'btn-primary') {
+                this.cor = 'btn-danger';
+            } else {
+                this.cor = 'btn-primary';
+            }
+        }
     }
-  },
-
-  methods: {
-    enviar: function enviar(nome) {
-      alert('Enviado para ' + nome);
-    }
-  }
 
 });
 
@@ -43372,39 +43374,29 @@ var render = function() {
   return _c("div", [
     _c("h2", [_vm._v("Testes")]),
     _c("br"),
-    _vm._v(" "),
-    _c(
-      "ul",
-      _vm._l(_vm.users, function(user) {
-        return _c("li", [
-          _vm._v("@" + _vm._s(user.nome) + "'s is "),
-          _c("b", [
-            _vm._v(
-              _vm._s(_vm._f("truncate")(_vm._f("toUpperCase")(user.area), "6"))
-            )
-          ])
-        ])
-      })
+    _vm._v(
+      "\n\n        " +
+        _vm._s(_vm.nome) +
+        "\n        " +
+        _vm._s(_vm.toUpperCase) +
+        "\n\n        "
     ),
     _c("br"),
     _vm._v(" "),
-    _c("form", { attrs: { action: "https://google.com" } }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary",
-          attrs: { type: "submit" },
-          on: {
-            click: function($event) {
-              $event.preventDefault()
-              $event.stopPropagation()
-              _vm.enviar("Sumbus")
-            }
+    _c("p", { class: _vm.corFinal }, [_vm._v("testando testando testando")]),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass: "btn btn-primary",
+        on: {
+          click: function($event) {
+            _vm.trocaCor()
           }
-        },
-        [_vm._v("Enviar")]
-      )
-    ])
+        }
+      },
+      [_vm._v("Trocar")]
+    )
   ])
 }
 var staticRenderFns = []

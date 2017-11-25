@@ -4,13 +4,13 @@
 
 		<h2>Testes</h2><br>
 
-        <ul>
-            <li v-for="user in users">@{{ user.nome }}'s is <b>{{ user.area | toUpperCase() | truncate('6') }}</b></li>
-        </ul><br>
+        {{ nome }}
+        {{ toUpperCase }}
 
-        <form action="https://google.com">
-            <button type="submit" class="btn btn-primary" @click.prevent.stop="enviar('Sumbus')">Enviar</button>
-        </form>
+        <br>
+        <p :class="corFinal">testando testando testando</p>
+
+        <button class="btn btn-primary" @click="trocaCor()">Trocar</button>
 
 	</div>	
 
@@ -23,42 +23,42 @@ export default{
 	data(){
 
 		return{
-
-		    users:[
-                { nome: 'John Doe',
-                  area: 'grafic-design'},
-
-                { nome: 'Claud Sumbus',
-                  area: 'front-end'},
-
-                { nome: 'Jose Seie',
-                  area: 'back-end'}
-            ]
-
+		    nome: 'John Doe',
+            cor: 'btn-primary'
 		}
 		
 	},
 
-    filters: {
-	    toUpperCase(str){
-	        return str.toUpperCase();
+    computed:{
+	    toUpperCase(){
+	        return this.nome.toUpperCase()
         },
 
-        truncate(str, length){
-	        var output = str;
+        corFinal(){
+	        return this.cor
+        },
 
-	        if(output.length > length) {
-                output = output.substr(0, length) + ' ...';
-            }
+    },
 
-	        return output;
+    watch:{
+
+	    nome(newValue, oldValue){
+            console.log('New Value', newValue);
+            console.log('Old Value', oldValue);
         }
+
     },
 
 	methods: {
-	    enviar(nome){
-	        alert('Enviado para '+nome);
-        },
+
+        trocaCor(){
+
+            if (this.cor == 'btn-primary'){
+                this.cor = 'btn-danger'
+            }else{
+                this.cor = 'btn-primary'
+            }
+        }
     }
 
 }
