@@ -8,7 +8,12 @@
         {{ toUpperCase }}
 
         <br>
-        <p :class="corFinal">testando testando testando</p>
+
+        <hr>
+        <div :class="corFinal">
+            <p>testando testando testando</p>
+            <hr>
+        </div>
 
         <button class="btn btn-primary" @click="trocaCor()">Trocar</button>
 
@@ -24,7 +29,8 @@ export default{
 
 		return{
 		    nome: 'John Doe',
-            cor: 'btn-primary'
+//            cor: 'btn-primary'
+            cor: 'show'
 		}
 		
 	},
@@ -53,10 +59,16 @@ export default{
 
         trocaCor(){
 
-            if (this.cor == 'btn-primary'){
-                this.cor = 'btn-danger'
+//            if (this.cor == 'btn-primary'){
+//                this.cor = 'btn-danger'
+//            }else{
+//                this.cor = 'btn-primary'
+//            }
+
+            if (this.cor == 'show'){
+                this.cor = 'hide'
             }else{
-                this.cor = 'btn-primary'
+                this.cor = 'show'
             }
         }
     }

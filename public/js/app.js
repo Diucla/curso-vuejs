@@ -42957,7 +42957,7 @@ exports = module.exports = __webpack_require__(45)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43322,6 +43322,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -43329,7 +43334,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         return {
             nome: 'John Doe',
-            cor: 'btn-primary'
+            //            cor: 'btn-primary'
+            cor: 'show'
         };
     },
 
@@ -43353,10 +43359,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         trocaCor: function trocaCor() {
 
-            if (this.cor == 'btn-primary') {
-                this.cor = 'btn-danger';
+            //            if (this.cor == 'btn-primary'){
+            //                this.cor = 'btn-danger'
+            //            }else{
+            //                this.cor = 'btn-primary'
+            //            }
+
+            if (this.cor == 'show') {
+                this.cor = 'hide';
             } else {
-                this.cor = 'btn-primary';
+                this.cor = 'show';
             }
         }
     }
@@ -43383,7 +43395,13 @@ var render = function() {
     ),
     _c("br"),
     _vm._v(" "),
-    _c("p", { class: _vm.corFinal }, [_vm._v("testando testando testando")]),
+    _c("hr"),
+    _vm._v(" "),
+    _c("div", { class: _vm.corFinal }, [
+      _c("p", [_vm._v("testando testando testando")]),
+      _vm._v(" "),
+      _c("hr")
+    ]),
     _vm._v(" "),
     _c(
       "button",
