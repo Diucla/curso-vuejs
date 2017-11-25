@@ -4,15 +4,8 @@
 
 		<h2>Testes</h2>
 
-        <!--<img v-bind:src="imagem" v-bind:alt="alt">-->
-        <!-- ou -->
-        <img :src="imagem"
-             :alt="alt">
-
-        <p :class="cor">
-            Já a propriedade methods conterá um objeto com todos os métodos também disponíveis ao HTML mas não limitados a ele. Digo isso pois qualquer método contido neste objeto pode também executar os demais métodos do componente, bastando para isso utilizar o this
-
-        </p>
+        <button class="btn" :class="btnClassEnviar" :style="btnStyleEnviar">Enviar</button>
+        <button class="btn" :class="btnClassLimpar" :style="btnStyleLimpar">Limpar</button>
 
 	</div>	
 
@@ -27,13 +20,19 @@ export default{
 	data(){
 
 		return{
-
-		    imagem: "https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg",
-
-            alt: 'VueJs image',
-
-            cor: 'blue'
-
+            btnClassEnviar: {
+                'btn-primary': true,
+                'btn-sm': true
+            },
+		    btnClassLimpar:[
+		        'btn-danger', {'btn-lg': true}
+            ],
+            btnStyleEnviar: {
+                'font-size' : '29px'
+            },
+            btnStyleLimpar: {
+                'font-size' : '20px'
+            }
 		}
 		
 	},
@@ -43,14 +42,4 @@ export default{
 }
 
 </script>
-<style>
-
-    .blue{
-        background-color: blue;
-    }
-
-    .green{
-        background-color: green;
-    }
-
-</style>
+<style></style>

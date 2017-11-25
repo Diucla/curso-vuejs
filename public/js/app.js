@@ -42957,7 +42957,7 @@ exports = module.exports = __webpack_require__(45)(undefined);
 
 
 // module
-exports.push([module.i, "\n.blue{\n    background-color: blue;\n}\n.green{\n    background-color: green;\n}\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43317,32 +43317,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	ready: function ready() {},
-	data: function data() {
+  ready: function ready() {},
+  data: function data() {
 
-		return {
+    return {
+      btnClassEnviar: {
+        'btn-primary': true,
+        'btn-sm': true
+      },
+      btnClassLimpar: ['btn-danger', { 'btn-lg': true }],
+      btnStyleEnviar: {
+        'font-size': '29px'
+      },
+      btnStyleLimpar: {
+        'font-size': '20px'
+      }
+    };
+  },
 
-			imagem: "https://pbs.twimg.com/profile_images/875996174305472512/upM71pVR_400x400.jpg",
 
-			alt: 'VueJs image',
-
-			cor: 'blue'
-
-		};
-	},
-
-
-	methods: {}
+  methods: {}
 
 });
 
@@ -43357,13 +43354,25 @@ var render = function() {
   return _c("div", [
     _c("h2", [_vm._v("Testes")]),
     _vm._v(" "),
-    _c("img", { attrs: { src: _vm.imagem, alt: _vm.alt } }),
+    _c(
+      "button",
+      {
+        staticClass: "btn",
+        class: _vm.btnClassEnviar,
+        style: _vm.btnStyleEnviar
+      },
+      [_vm._v("Enviar")]
+    ),
     _vm._v(" "),
-    _c("p", { class: _vm.cor }, [
-      _vm._v(
-        "\n            Já a propriedade methods conterá um objeto com todos os métodos também disponíveis ao HTML mas não limitados a ele. Digo isso pois qualquer método contido neste objeto pode também executar os demais métodos do componente, bastando para isso utilizar o this\n\n        "
-      )
-    ])
+    _c(
+      "button",
+      {
+        staticClass: "btn",
+        class: _vm.btnClassLimpar,
+        style: _vm.btnStyleLimpar
+      },
+      [_vm._v("Limpar")]
+    )
   ])
 }
 var staticRenderFns = []
