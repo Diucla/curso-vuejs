@@ -42957,7 +42957,7 @@ exports = module.exports = __webpack_require__(45)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43320,20 +43320,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	data: function data() {
+  data: function data() {
 
-		return {};
-	},
+    return {
+
+      users: [{ nome: 'John Doe',
+        area: 'grafic-design' }, { nome: 'Claud Sumbus',
+        area: 'front-end' }, { nome: 'Jose Seie',
+        area: 'back-end' }]
+
+    };
+  },
 
 
-	methods: {
-		enviar: function enviar(nome) {
-			alert('Enviado para ' + nome);
-		}
-	}
+  filters: {
+    toUpperCase: function toUpperCase(str) {
+      return str.toUpperCase();
+    },
+    truncate: function truncate(str) {
+      return str.substr(0, 8) + ' ...';
+    }
+  },
+
+  methods: {
+    enviar: function enviar(nome) {
+      alert('Enviado para ' + nome);
+    }
+  }
 
 });
 
@@ -43347,6 +43365,20 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("h2", [_vm._v("Testes")]),
+    _c("br"),
+    _vm._v(" "),
+    _c(
+      "ul",
+      _vm._l(_vm.users, function(user) {
+        return _c("li", [
+          _vm._v("@" + _vm._s(user.nome) + "'s is "),
+          _c("b", [
+            _vm._v(_vm._s(_vm._f("truncate")(_vm._f("toUpperCase")(user.area))))
+          ])
+        ])
+      })
+    ),
+    _c("br"),
     _vm._v(" "),
     _c("form", { attrs: { action: "https://google.com" } }, [
       _c(
