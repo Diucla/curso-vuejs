@@ -42957,7 +42957,7 @@ exports = module.exports = __webpack_require__(45)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43321,33 +43321,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	maunted: function maunted() {
+	ready: function ready() {
 
-		getUsers();
+		this.getUsers();
+
+		this.teste();
 	},
 	data: function data() {
 
 		return {
 
-			status: true,
-			titulo: 'Aprendendo VueJs',
+			titulo: '',
+
+			linguagens: [{ nome: "javascript" }, { nome: "PHP" }, { nome: "Java" }],
 			users: []
 
 		};
 	},
 
 
-	methods: {
-		getUsers: function getUsers() {
-
-			axios.get('/api/users').then(function (response) {
-				console.log(response);
-			});
-		}
-	}
+	methods: {}
 
 });
 
@@ -43359,17 +43357,18 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("h2", [_vm._v("Listagem")]),
-      _vm._v(" "),
-      _vm._l(_vm.users, function(user) {
-        return _c("div")
+  return _c("div", [
+    _c("h2", [_vm._v(_vm._s(_vm.titulo))]),
+    _vm._v(" "),
+    _c(
+      "ul",
+      _vm._l(_vm.linguagens, function(item, index) {
+        return _c("li", [
+          _vm._v(" " + _vm._s(index + 1) + " - " + _vm._s(item.nome) + " ")
+        ])
       })
-    ],
-    2
-  )
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

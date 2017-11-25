@@ -2,11 +2,13 @@
 	
 	<div>
 
-<h2>Listagem</h2>
+		<h2>{{ titulo }}</h2>
 
-		<div v-for="user in users">
-			
-		</div>
+        <ul>
+
+            <li v-for="(item, index) in linguagens"> {{ index+1 }} - {{ item.nome }} </li>
+
+        </ul>
 
 
 	</div>	
@@ -19,10 +21,11 @@
 
 export default{
 
+	ready (){
 
-	maunted (){
+		this.getUsers();
 
-		getUsers();
+		this.teste()
 
 	},
 
@@ -30,8 +33,13 @@ export default{
 
 		return{
 
-			status: true,
-			titulo: 'Aprendendo VueJs',
+			titulo: '',
+
+            linguagens: [
+                { nome : "javascript"},
+                { nome : "PHP"},
+                { nome : "Java"}
+            ],
 			users: []
 
 		}
@@ -40,13 +48,6 @@ export default{
 
 	methods:{
 
-		getUsers(){
-
-			axios.get('/api/users').then(function(response){
-				console.log(response);
-			})
-
-		}
 
 	}
 
