@@ -5,7 +5,7 @@
 		<h2>Testes</h2><br>
 
         <ul>
-            <li v-for="user in users">@{{ user.nome }}'s is <b>{{ user.area | toUpperCase() | truncate() }}</b></li>
+            <li v-for="user in users">@{{ user.nome }}'s is <b>{{ user.area | toUpperCase() | truncate('6') }}</b></li>
         </ul><br>
 
         <form action="https://google.com">
@@ -44,8 +44,14 @@ export default{
 	        return str.toUpperCase();
         },
 
-        truncate(str){
-	        return str.substr(0,8)+' ...';
+        truncate(str, length){
+	        var output = str;
+
+	        if(output.length > length) {
+                output = output.substr(0, length) + ' ...';
+            }
+
+	        return output;
         }
     },
 

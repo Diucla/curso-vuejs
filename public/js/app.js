@@ -42957,7 +42957,7 @@ exports = module.exports = __webpack_require__(45)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43342,8 +43342,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     toUpperCase: function toUpperCase(str) {
       return str.toUpperCase();
     },
-    truncate: function truncate(str) {
-      return str.substr(0, 8) + ' ...';
+    truncate: function truncate(str, length) {
+      var output = str;
+
+      if (output.length > length) {
+        output = output.substr(0, length) + ' ...';
+      }
+
+      return output;
     }
   },
 
@@ -43373,7 +43379,9 @@ var render = function() {
         return _c("li", [
           _vm._v("@" + _vm._s(user.nome) + "'s is "),
           _c("b", [
-            _vm._v(_vm._s(_vm._f("truncate")(_vm._f("toUpperCase")(user.area))))
+            _vm._v(
+              _vm._s(_vm._f("truncate")(_vm._f("toUpperCase")(user.area), "6"))
+            )
           ])
         ])
       })
