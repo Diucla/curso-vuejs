@@ -3,9 +3,9 @@
     <div>
 
         <hr>
-        <h4>List of all Users</h4>
+        <h4>List of all Users ({{ lists.length }})</h4>
         <hr>
-        <filho :users="lists"></filho>
+        <filho :users="lists" @emitClick="getUser()"></filho>
         <hr>
         <div class="col-md-12">
 
@@ -19,9 +19,7 @@
 
     let filho = require('./Filho.vue');
 
-
     export default {
-
 
         components: {filho},
 
@@ -34,13 +32,21 @@
         data() {
             return {
 
-                lists: {}
+                lists: [],
+                name:'',
+                count:3
 
             }
         },
 
 //        Métodos
         methods: {
+
+            getUser(userName){
+
+                alert('Ola  '+userName)
+
+            },
 
             getUsers() {
                 axios.get('/api/users')

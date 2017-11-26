@@ -43514,7 +43514,7 @@ exports = module.exports = __webpack_require__(45)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43560,7 +43560,9 @@ var filho = __webpack_require__(59);
     data: function data() {
         return {
 
-            lists: {}
+            lists: [],
+            name: '',
+            count: 3
 
         };
     },
@@ -43568,6 +43570,10 @@ var filho = __webpack_require__(59);
 
     //        Métodos
     methods: {
+        getUser: function getUser(userName) {
+
+            alert('Ola  ' + userName);
+        },
         getUsers: function getUsers() {
             var _this = this;
 
@@ -43600,6 +43606,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -43609,8 +43616,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         emitClick: function emitClick(user) {
 
-            alert('Ola  ' + user.name);
-            this.$emit('emit-click', user);
+            //                alert(user.name)
+
+            this.$emit('emitClick', user.name);
         }
     }
 
@@ -43669,11 +43677,20 @@ var render = function() {
     [
       _c("hr"),
       _vm._v(" "),
-      _c("h4", [_vm._v("List of all Users")]),
+      _c("h4", [
+        _vm._v("List of all Users (" + _vm._s(_vm.lists.length) + ")")
+      ]),
       _vm._v(" "),
       _c("hr"),
       _vm._v(" "),
-      _c("filho", { attrs: { users: _vm.lists } }),
+      _c("filho", {
+        attrs: { users: _vm.lists },
+        on: {
+          emitClick: function($event) {
+            _vm.getUser()
+          }
+        }
+      }),
       _vm._v(" "),
       _c("hr"),
       _vm._v(" "),

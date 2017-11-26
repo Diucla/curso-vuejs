@@ -3,11 +3,12 @@
     <div>
 
         <li v-for="(user, index) in users" >
+
             <a href="" @click.prevent.stop="emitClick(user)"> {{ index }} - {{ user.name }} </a>
+
         </li>
 
     </div>
-
 
 </template>
 
@@ -21,8 +22,9 @@
 
             emitClick(user){
 
-                alert('Ola  '+user.name)
-                this.$emit('emit-click', user);
+//                alert(user.name)
+
+                this.$emit('emitClick', user.name);
 
             }
 
