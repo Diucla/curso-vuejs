@@ -19,6 +19,10 @@ Vue.component('example', require('./components/Example.vue'));
 
 Vue.component('teste', require('./components/Teste.vue'));
 
+Vue.component('pai', require('./components/Pai.vue'));
+
+Vue.component('filho', require('./components/Filho.vue'));
+
 const app = new Vue({
     el: '#app'
 });
