@@ -2,10 +2,6 @@
 
     <div>
 
-        <h3>Filho</h3>
-
-        <br>
-
         <li v-for="(user, index) in users" > {{ index }} - {{ user.name }} </li>
 
     </div>
@@ -17,7 +13,7 @@
 
     export default {
 
-        props:['users'],
+        props:['users']
 
     }
 

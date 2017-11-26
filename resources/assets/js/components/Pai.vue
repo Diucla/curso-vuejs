@@ -2,8 +2,11 @@
 
     <div>
 
+        <hr>
+        <h4>List of all Users</h4>
+        <hr>
         <filho :users="lists"></filho>
-
+        <hr>
         <div class="col-md-12">
 
         </div>
