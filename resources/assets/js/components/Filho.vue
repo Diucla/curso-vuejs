@@ -2,7 +2,9 @@
 
     <div>
 
-        <li v-for="(user, index) in users" > {{ index }} - {{ user.name }} </li>
+        <li v-for="(user, index) in users" >
+            <a href="" @click.prevent.stop="emitClick(user)"> {{ index }} - {{ user.name }} </a>
+        </li>
 
     </div>
 
@@ -13,7 +15,18 @@
 
     export default {
 
-        props:['users']
+        props:['users'],
+
+        methods:{
+
+            emitClick(user){
+
+                alert('Ola  '+user.name)
+                this.$emit('emit-click', user);
+
+            }
+
+        }
 
     }
 

@@ -43598,11 +43598,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
-    props: ['users']
+    props: ['users'],
+
+    methods: {
+        emitClick: function emitClick(user) {
+
+            alert('Ola  ' + user.name);
+            this.$emit('emit-click', user);
+        }
+    }
 
 });
 
@@ -43618,7 +43628,20 @@ var render = function() {
     "div",
     _vm._l(_vm.users, function(user, index) {
       return _c("li", [
-        _vm._v(" " + _vm._s(index) + " - " + _vm._s(user.name) + " ")
+        _c(
+          "a",
+          {
+            attrs: { href: "" },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                $event.stopPropagation()
+                _vm.emitClick(user)
+              }
+            }
+          },
+          [_vm._v(" " + _vm._s(index) + " - " + _vm._s(user.name) + " ")]
+        )
       ])
     })
   )
