@@ -6,7 +6,7 @@
 
         <br>
 
-        <li v-for="(user, index) in lists" > {{ index }} - {{ user.name }} </li>
+        <li v-for="(user, index) in users" > {{ index }} - {{ user.name }} </li>
 
     </div>
 
@@ -17,30 +17,7 @@
 
     export default {
 
-        mounted(){
-
-            this.getUsers()
-        },
-
-        data(){
-          return{
-
-              lists: {}
-
-          }
-        },
-
-        methods:{
-
-            getUsers(){
-                axios.get('/api/users')
-
-                    .then( (response) => this.lists = response.data )
-
-                    .catch( (error) => this.errors = error.response.data )
-            },
-
-        }
+        props:['users'],
 
     }
 

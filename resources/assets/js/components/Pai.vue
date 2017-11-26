@@ -2,7 +2,7 @@
 
     <div>
 
-        <filho></filho>
+        <filho :users="lists"></filho>
 
         <div class="col-md-12">
 
@@ -17,21 +17,38 @@
     let filho = require('./Filho.vue');
 
 
-    export default{
+    export default {
 
 
-        components:{filho},
+        components: {filho},
 
-    data(){
-
-            return{}
-
+//        Hook mounted
+        mounted() {
+            this.getUsers()
         },
 
-        computed:{
+//        Varaveis
+        data() {
+            return {
+
+                lists: {}
+
+            }
         },
 
-        methods: {}
+//        Métodos
+        methods: {
+
+            getUsers() {
+                axios.get('/api/users')
+
+                    .then((response) => this.lists = response.data)
+
+                    .catch((error) => this.errors = error.response.data)
+            },
+
+        }
+
     }
 
 </script>

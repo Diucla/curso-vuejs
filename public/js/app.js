@@ -43514,7 +43514,7 @@ exports = module.exports = __webpack_require__(45)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43547,15 +43547,35 @@ var filho = __webpack_require__(59);
 
     components: { filho: filho },
 
-    data: function data() {
-
-        return {};
+    //        Hook mounted
+    mounted: function mounted() {
+        this.getUsers();
     },
 
 
-    computed: {},
+    //        Varaveis
+    data: function data() {
+        return {
 
-    methods: {}
+            lists: {}
+
+        };
+    },
+
+
+    //        Métodos
+    methods: {
+        getUsers: function getUsers() {
+            var _this = this;
+
+            axios.get('/api/users').then(function (response) {
+                return _this.lists = response.data;
+            }).catch(function (error) {
+                return _this.errors = error.response.data;
+            });
+        }
+    }
+
 });
 
 /***/ }),
@@ -43582,30 +43602,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
 
-        this.getUsers();
-    },
-    data: function data() {
-        return {
-
-            lists: {}
-
-        };
-    },
-
-
-    methods: {
-        getUsers: function getUsers() {
-            var _this = this;
-
-            axios.get('/api/users').then(function (response) {
-                return _this.lists = response.data;
-            }).catch(function (error) {
-                return _this.errors = error.response.data;
-            });
-        }
-    }
+    props: ['users']
 
 });
 
@@ -43624,7 +43622,7 @@ var render = function() {
       _vm._v(" "),
       _c("br"),
       _vm._v(" "),
-      _vm._l(_vm.lists, function(user, index) {
+      _vm._l(_vm.users, function(user, index) {
         return _c("li", [
           _vm._v(" " + _vm._s(index) + " - " + _vm._s(user.name) + " ")
         ])
@@ -43653,7 +43651,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_c("filho"), _vm._v(" "), _c("div", { staticClass: "col-md-12" })],
+    [
+      _c("filho", { attrs: { users: _vm.lists } }),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-12" })
+    ],
     1
   )
 }
