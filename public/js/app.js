@@ -42957,7 +42957,7 @@ exports = module.exports = __webpack_require__(45)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43330,29 +43330,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	data: function data() {
+				data: function data() {
 
-		return {
-			firstName: '',
-			lastName: '',
-			fullName: ''
-		};
-	},
+								return {
+												firstName: '',
+												lastName: ''
+												//            fullName:''
+								};
+				},
 
 
-	computed: {},
+				computed: {
+								fullName: function fullName() {
+												return this.firstName + ' ' + this.lastName;
+								}
+				},
 
-	//    o watch so é acionado quando uma variavel for alterada
-	watch: {
-		firstName: function firstName(newValue) {
-			this.fullName = newValue + ' ' + this.lastName;
-		},
-		lastName: function lastName(newValue) {
-			this.fullName = this.firstName + ' ' + newValue;
-		}
-	},
+				//    o watch so é acionado quando uma variavel for alterada
+				watch: {
+								//	    firstName(newValue){
+								//	        this.fullName = newValue +' '+ this.lastName;
+								//        },
+								//
+								//        lastName(newValue){
+								//	        this.fullName = this.firstName + ' '+ newValue;
+								//        }
+				},
 
-	methods: {}
+				methods: {}
 });
 
 /***/ }),

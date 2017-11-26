@@ -30,22 +30,26 @@ export default{
 		return{
 		    firstName: '',
             lastName: '',
-            fullName:''
+//            fullName:''
 		}
 		
 	},
 
-    computed:{},
+    computed:{
+	    fullName(){
+	        return this.firstName+ ' ' + this.lastName;
+        }
+    },
 
 //    o watch so é acionado quando uma variavel for alterada
     watch:{
-	    firstName(newValue){
-	        this.fullName = newValue +' '+ this.lastName;
-        },
-
-        lastName(newValue){
-	        this.fullName = this.firstName + ' '+ newValue;
-        }
+//	    firstName(newValue){
+//	        this.fullName = newValue +' '+ this.lastName;
+//        },
+//
+//        lastName(newValue){
+//	        this.fullName = this.firstName + ' '+ newValue;
+//        }
     },
 
 	methods: {}
