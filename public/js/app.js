@@ -42957,7 +42957,7 @@ exports = module.exports = __webpack_require__(45)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43330,49 +43330,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
+	data: function data() {
 
-        return {
-            nome: 'John Doe',
-            //            cor: 'btn-primary'
-            cor: 'show'
-        };
-    },
+		return {
+			firstName: '',
+			lastName: '',
+			fullName: ''
+		};
+	},
 
 
-    computed: {
-        toUpperCase: function toUpperCase() {
-            return this.nome.toUpperCase();
-        },
-        corFinal: function corFinal() {
-            return this.cor;
-        }
-    },
+	computed: {},
 
-    watch: {
-        nome: function nome(newValue, oldValue) {
-            console.log('New Value', newValue);
-            console.log('Old Value', oldValue);
-        }
-    },
+	//    o watch so é acionado quando uma variavel for alterada
+	watch: {
+		firstName: function firstName(newValue) {
+			this.fullName = newValue + ' ' + this.lastName;
+		},
+		lastName: function lastName(newValue) {
+			this.fullName = this.firstName + ' ' + newValue;
+		}
+	},
 
-    methods: {
-        trocaCor: function trocaCor() {
-
-            //            if (this.cor == 'btn-primary'){
-            //                this.cor = 'btn-danger'
-            //            }else{
-            //                this.cor = 'btn-primary'
-            //            }
-
-            if (this.cor == 'show') {
-                this.cor = 'hide';
-            } else {
-                this.cor = 'show';
-            }
-        }
-    }
-
+	methods: {}
 });
 
 /***/ }),
@@ -43386,35 +43366,60 @@ var render = function() {
   return _c("div", [
     _c("h2", [_vm._v("Testes")]),
     _c("br"),
-    _vm._v(
-      "\n\n        " +
-        _vm._s(_vm.nome) +
-        "\n        " +
-        _vm._s(_vm.toUpperCase) +
-        "\n\n        "
-    ),
-    _c("br"),
     _vm._v(" "),
-    _c("hr"),
-    _vm._v(" "),
-    _c("div", { class: _vm.corFinal }, [
-      _c("p", [_vm._v("testando testando testando")]),
-      _vm._v(" "),
-      _c("hr")
-    ]),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        staticClass: "btn btn-primary",
+    _c("div", { staticClass: "col-md-12" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.firstName,
+            expression: "firstName"
+          }
+        ],
+        staticClass: "form-control",
+        attrs: { type: "text", placeholder: "First Name" },
+        domProps: { value: _vm.firstName },
         on: {
-          click: function($event) {
-            _vm.trocaCor()
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.firstName = $event.target.value
           }
         }
-      },
-      [_vm._v("Trocar")]
-    )
+      }),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.lastName,
+            expression: "lastName"
+          }
+        ],
+        staticClass: "form-control",
+        attrs: { type: "text", placeholder: "Last Name" },
+        domProps: { value: _vm.lastName },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.lastName = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-md-12" }, [
+      _vm._v(
+        "\n\n            Full Name : " + _vm._s(_vm.fullName) + "\n\n        "
+      )
+    ])
   ])
 }
 var staticRenderFns = []

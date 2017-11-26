@@ -4,18 +4,18 @@
 
 		<h2>Testes</h2><br>
 
-        {{ nome }}
-        {{ toUpperCase }}
+        <div class="col-md-12">
 
-        <br>
+            <input v-model="firstName" class="form-control" type="text" placeholder="First Name"> <br>
+            <input v-model="lastName" class="form-control" type="text" placeholder="Last Name">
 
-        <hr>
-        <div :class="corFinal">
-            <p>testando testando testando</p>
-            <hr>
         </div>
 
-        <button class="btn btn-primary" @click="trocaCor()">Trocar</button>
+        <div class="col-md-12">
+
+            Full Name : {{ fullName }}
+
+        </div>
 
 	</div>	
 
@@ -28,51 +28,27 @@ export default{
 	data(){
 
 		return{
-		    nome: 'John Doe',
-//            cor: 'btn-primary'
-            cor: 'show'
+		    firstName: '',
+            lastName: '',
+            fullName:''
 		}
 		
 	},
 
-    computed:{
-	    toUpperCase(){
-	        return this.nome.toUpperCase()
-        },
+    computed:{},
 
-        corFinal(){
-	        return this.cor
-        },
-
-    },
-
+//    o watch so é acionado quando uma variavel for alterada
     watch:{
+	    firstName(newValue){
+	        this.fullName = newValue +' '+ this.lastName;
+        },
 
-	    nome(newValue, oldValue){
-            console.log('New Value', newValue);
-            console.log('Old Value', oldValue);
+        lastName(newValue){
+	        this.fullName = this.firstName + ' '+ newValue;
         }
-
     },
 
-	methods: {
-
-        trocaCor(){
-
-//            if (this.cor == 'btn-primary'){
-//                this.cor = 'btn-danger'
-//            }else{
-//                this.cor = 'btn-primary'
-//            }
-
-            if (this.cor == 'show'){
-                this.cor = 'hide'
-            }else{
-                this.cor = 'show'
-            }
-        }
-    }
-
+	methods: {}
 }
 
 </script>
