@@ -42957,7 +42957,7 @@ exports = module.exports = __webpack_require__(45)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43323,43 +43323,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
+	data: function data() {
 
-        return {
-            titulo: 'Aprendendo VueJs'
-        };
-    },
-    beforeCreate: function beforeCreate() {
-        console.log('beforeCreate');
-        console.log('titulo', this.titulo);
-        console.log('el', this.$el);
-    },
-    created: function created() {
-        console.log('created');
-        console.log('titulo', this.titulo);
-        console.log('el', this.$el);
-    },
-    beforeMount: function beforeMount() {
-        console.log('beforeMount');
-        console.log('titulo', this.titulo);
-        console.log('el', this.$el);
-    },
-    mounted: function mounted() {
-        console.log('mounted');
-        console.log('titulo', this.titulo);
-        console.log('el', this.$el);
-    },
-    beforeUpdate: function beforeUpdate() {
-        console.log('beforeUpdate');
-    },
-    update: function update() {
-        console.log('update');
-    },
+		return {
+			titulo: 'Aprendendo VueJs'
+		};
+	},
 
 
-    computed: {},
+	computed: {},
 
-    methods: {}
+	methods: {}
 });
 
 /***/ }),
