@@ -2,18 +2,11 @@
 	
 	<div>
 
-		<h2>Testes</h2><br>
+		<h2>{{ titulo }}</h2><br>
+
+
 
         <div class="col-md-12">
-
-            <input v-model="firstName" class="form-control" type="text" placeholder="First Name"> <br>
-            <input v-model="lastName" class="form-control" type="text" placeholder="Last Name">
-
-        </div>
-
-        <div class="col-md-12">
-
-            Full Name : {{ fullName }}
 
         </div>
 
@@ -28,28 +21,31 @@ export default{
 	data(){
 
 		return{
-		    firstName: '',
-            lastName: '',
-//            fullName:''
+		 titulo:'Aprendendo VueJs'
 		}
 		
 	},
 
-    computed:{
-	    fullName(){
-	        return this.firstName+ ' ' + this.lastName;
-        }
+    beforeCreate(){
+	    console.log('beforeCreate');
+    },
+    created(){
+        console.log('created');
+    },
+    beforeMount(){
+        console.log('beforeMount');
+    },
+    mounted(){
+        console.log('mounted');
+    },
+    beforeUpdate(){
+        console.log('beforeUpdate');
+    },
+    update(){
+        console.log('update');
     },
 
-//    o watch so é acionado quando uma variavel for alterada
-    watch:{
-//	    firstName(newValue){
-//	        this.fullName = newValue +' '+ this.lastName;
-//        },
-//
-//        lastName(newValue){
-//	        this.fullName = this.firstName + ' '+ newValue;
-//        }
+    computed:{
     },
 
 	methods: {}

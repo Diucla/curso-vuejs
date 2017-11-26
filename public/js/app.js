@@ -42957,7 +42957,7 @@ exports = module.exports = __webpack_require__(45)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43320,44 +43320,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-				data: function data() {
+    data: function data() {
 
-								return {
-												firstName: '',
-												lastName: ''
-												//            fullName:''
-								};
-				},
+        return {
+            titulo: 'Aprendendo VueJs'
+        };
+    },
+    beforeCreate: function beforeCreate() {
+        console.log('beforeCreate');
+    },
+    created: function created() {
+        console.log('created');
+    },
+    beforeMount: function beforeMount() {
+        console.log('beforeMount');
+    },
+    mounted: function mounted() {
+        console.log('mounted');
+    },
+    beforeUpdate: function beforeUpdate() {
+        console.log('beforeUpdate');
+    },
+    update: function update() {
+        console.log('update');
+    },
 
 
-				computed: {
-								fullName: function fullName() {
-												return this.firstName + ' ' + this.lastName;
-								}
-				},
+    computed: {},
 
-				//    o watch so é acionado quando uma variavel for alterada
-				watch: {
-								//	    firstName(newValue){
-								//	        this.fullName = newValue +' '+ this.lastName;
-								//        },
-								//
-								//        lastName(newValue){
-								//	        this.fullName = this.firstName + ' '+ newValue;
-								//        }
-				},
-
-				methods: {}
+    methods: {}
 });
 
 /***/ }),
@@ -43369,62 +43363,10 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h2", [_vm._v("Testes")]),
+    _c("h2", [_vm._v(_vm._s(_vm.titulo))]),
     _c("br"),
     _vm._v(" "),
-    _c("div", { staticClass: "col-md-12" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.firstName,
-            expression: "firstName"
-          }
-        ],
-        staticClass: "form-control",
-        attrs: { type: "text", placeholder: "First Name" },
-        domProps: { value: _vm.firstName },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.firstName = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.lastName,
-            expression: "lastName"
-          }
-        ],
-        staticClass: "form-control",
-        attrs: { type: "text", placeholder: "Last Name" },
-        domProps: { value: _vm.lastName },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.lastName = $event.target.value
-          }
-        }
-      })
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "col-md-12" }, [
-      _vm._v(
-        "\n\n            Full Name : " + _vm._s(_vm.fullName) + "\n\n        "
-      )
-    ])
+    _c("div", { staticClass: "col-md-12" })
   ])
 }
 var staticRenderFns = []
