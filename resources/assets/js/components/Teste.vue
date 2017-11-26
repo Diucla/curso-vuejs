@@ -27,16 +27,24 @@ export default{
 	},
 
     beforeCreate(){
-	    console.log('beforeCreate');
+        console.log('beforeCreate');
+        console.log('titulo', this.titulo);
+        console.log('el', this.$el);
     },
     created(){
         console.log('created');
+        console.log('titulo', this.titulo);
+        console.log('el', this.$el);
     },
     beforeMount(){
         console.log('beforeMount');
+        console.log('titulo', this.titulo);
+        console.log('el', this.$el);
     },
     mounted(){
         console.log('mounted');
+        console.log('titulo', this.titulo);
+        console.log('el', this.$el);
     },
     beforeUpdate(){
         console.log('beforeUpdate');
