@@ -1,0 +1,39 @@
+<template>
+
+    <div>
+
+        <h1>Inicializacao</h1>
+
+    </div>
+
+</template>
+
+
+<script>
+
+    export default {
+
+        mounted() {
+
+            this.getUsers();
+
+        },
+
+        methods:{
+            getUsers() {
+                axios.get('/api/users')
+
+                    .then( (response) => {
+
+                        response.data.forEach( (user) =>{
+
+                            this.$store.commit('add_users', user)
+
+                        })
+                    })
+            }
+        }
+
+    }
+
+</script>

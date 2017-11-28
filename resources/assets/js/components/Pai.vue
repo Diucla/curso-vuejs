@@ -3,9 +3,9 @@
     <div>
 
         <hr>
-        <h4>List of all Users ({{ lists.length }})</h4>
+        <h4>List of all Users ({{ users.length }})</h4>
         <hr>
-        <filho :users="lists" @emitClick="getUser()"></filho>
+        <filho :users="users" @emitClick="getUser()"></filho>
         <hr>
         <div class="col-md-12">
 
@@ -23,40 +23,15 @@
 
         components: {filho},
 
-//        Hook mounted
-        mounted() {
-            this.getUsers()
-        },
+        computed: {
 
-//        Varaveis
-        data() {
-            return {
-
-                lists: [],
-                name:'',
-                count:3
-
-            }
-        },
-
-//        Métodos
-        methods: {
-
-            getUser(userName){
-
-                alert('Ola  '+userName)
-
+            users() {
+                return this.$store.state.users;
             },
 
-            getUsers() {
-                axios.get('/api/users')
+        },
 
-                    .then((response) => this.lists = response.data)
 
-                    .catch((error) => this.errors = error.response.data)
-            },
-
-        }
 
     }
 

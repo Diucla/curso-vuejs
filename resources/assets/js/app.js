@@ -17,12 +17,11 @@ window.Vue = require('vue');
 
 Vue.component('example', require('./components/Example.vue'));
 
-Vue.component('teste', require('./components/Teste.vue'));
+Vue.component('init', require('./components/Inicializacao.vue'));
 
 Vue.component('pai', require('./components/Pai.vue'));
 
 Vue.component('filho', require('./components/Filho.vue'));
-
 
 import { store } from './store'
 

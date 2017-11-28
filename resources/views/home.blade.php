@@ -14,9 +14,10 @@
                         </div>
                     @endif
 
-                <teste></teste>
 
                         <pai></pai>
+
+                        <init></init>
 
                 </div>
             </div>

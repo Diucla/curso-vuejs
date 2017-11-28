@@ -20,7 +20,7 @@ export const store = new Vuex.Store({
         // Atribui ao State User a lista de Todos os Users de certa forma vindos da API
         add_users(state, user){
 
-            state.allUsers.push(user)
+            state.users.push(user)
 
         },
 
