@@ -23,6 +23,13 @@ Vue.component('pai', require('./components/Pai.vue'));
 
 Vue.component('filho', require('./components/Filho.vue'));
 
+
+import { store } from './store'
+
 const app = new Vue({
-    el: '#app'
+
+    el: '#app',
+
+    store,
+
 });
