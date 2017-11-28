@@ -10,3 +10,5 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 .env
+resources/views/home.blade.php___jb_old___
+public/js/app.js___jb_old___
